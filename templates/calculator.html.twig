@@ -1,0 +1,109 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container app">
+        <div class="row justify-content-center mt-5">
+            <div class="col-auto">
+                <div class="calculator-box">
+                    <table class="calculator">
+                        <tbody>
+                            <tr>
+                                <td colspan="4">
+                                    <input type="text" class="display" value="{{ current }}" disabled/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('calculator_updateCurrent', { operation: 'sign' }) }}">
+                                        <input type="button" class="button" value="+/-"/>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_updateCurrent', { operation: 'point' }) }}">
+                                        <input type="button" class="button" value="."/>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_save') }}"><input type="button" class="button" value="M"/>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_updateCurrent', { operation: 'percent' }) }}">
+                                        <input type="button" class="button" value="%"/>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('calculator_append', { value: 1 }) }}"><input type="button" class="button" value="1"/></a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_append', { value: 2 }) }}"><input type="button" class="button" value="2"/></a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_append', { value: 3 }) }}"><input type="button" class="button" value="3"/></a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_operand', { value: add}) "><input type="button" class="button" value'="+"/></}}' a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('calculator_append', { value: 4 }) }}"><input type="button" class="button" value="4"/></a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_append', { value: 5 }) }}"><input type="button" class="button" value="5"/></a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_append', { value: 6 }) }}"><input type="button" class="button" value="6"/></a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_operand', { value: 'minus' }) }}">
+                                        <input type="button" class="button" value="-"/>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('calculator_append', { value: 7 }) }}"><input type="button" class="button" value="7"/></a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_append', { value: 8 }) }}"><input type="button" class="button" value="8"/></a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_append', { value: 9 }) }}"><input type="button" class="button" value="9"/></a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_operand', { value: 'divide' }) }}">
+                                        <input type="button" class="button" value="/"/>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('calculator_clear') }}/">
+                                        <button class="button">
+                                            C
+                                        </button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_append', { value: 0 }) }}">
+                                        <input type="button" class="button" value="0"/>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_equal') }}/"><input type="button" class="button" value="="/></a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('calculator_operand', { value: 'multiply' }) }}">
+                                        <input type="button" class="button" value="*"/>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+{% endblock %}
