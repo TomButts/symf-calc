@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Session\Session;
+use App\Service\Calculator;
 
 /**
  * @Route("/calculator", name="calculator_")
@@ -13,8 +15,10 @@ class CalculatorController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index()
+    public function index(Calculator $calculator)
     {
+        $calculator->persist();
+
         return $this->render('calculator.html.twig', [ 'current' => '' ]);
     }
 
