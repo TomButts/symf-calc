@@ -6,12 +6,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/calculator", requirements={"_locale": "en|es|fr"}, name="calculator_")
+ * @Route("/calculator", name="calculator_")
  */
 class CalculatorController extends AbstractController
 {
     /**
-     * @Route("/{_locale}", name="index")
+     * @Route("/", name="index")
      */
     public function index()
     {
@@ -19,15 +19,18 @@ class CalculatorController extends AbstractController
     }
 
     /**
-     * @Route("/{_locale}/append/{value}" name="append")
+     * @Route("/append/{value}", name="append")
      */
     public function append($value)
     {
-
+        echo '<pre>';
+        print_r('hi');
+        echo '</pre>';
+        die();
     }
 
     /**
-     * @Route("/{_locale}/operand/{value}" name="operand")
+     * @Route("/operand/{value}", name="operand")
      */
     public function operand($value)
     {
@@ -35,7 +38,7 @@ class CalculatorController extends AbstractController
     }
 
     /**
-     * @Route("/{_locale}/updateCurrent/{operation}" name="updateCurrent")
+     * @Route("/updateCurrent/{operation}", name="updateCurrent")
      */
     public function updateCurrent($operation)
     {
@@ -43,7 +46,7 @@ class CalculatorController extends AbstractController
     }
 
     /**
-     * @Route("/{_locale}/equal" name="equal")
+     * @Route("/equal", name="equal")
      */
     public function equal()
     {
@@ -51,7 +54,7 @@ class CalculatorController extends AbstractController
     }
 
     /**
-     * @Route("/{_locale}/clear" name="clear")
+     * @Route("/clear", name="clear")
      */
     public function clear()
     {
@@ -59,7 +62,7 @@ class CalculatorController extends AbstractController
     }
 
     /**
-     * @Route("/{_locale}/save" name="save")
+     * @Route("/save", name="save")
      */
     public function save()
     {
