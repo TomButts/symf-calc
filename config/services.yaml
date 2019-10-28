@@ -25,3 +25,7 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    november_five_user.listener.user_registered:
+        class: NovemberFive\Listener\EventTestListener
+        tags:
+            - { name: kernel.event_listener, event: event.test, priority: 10 }
